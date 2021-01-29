@@ -1,4 +1,4 @@
-package praneeth.shiva.mahesh;
+package suk.satish.raki;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
