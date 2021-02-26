@@ -1,0 +1,12 @@
+#!/bin/bash
+a=$1
+b=$2
+if [ $a -eq $b ]
+then
+echo "$a and $b are same"
+elif [ $a -lt $b ]
+then
+echo "$a is lesser than $b"
+else
+	echo "$b is lesser than $a"
+fi
