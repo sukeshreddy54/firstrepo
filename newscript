@@ -1,0 +1,24 @@
+#!/bin/bash
+USERS=$@
+if [ $# -gt 0 ]
+then
+    for USERNAME in $USERS
+    do
+        EXUSER=$(cat /etc/passwd | grep -w $USERNAME | cut -d ":" -f1)
+        if [ "$USERNAME" = "$EXUSER" ]
+        then
+            echo "User Exists, please use a diffrent username."
+        else
+            SPEC=$(echo '!@#$%^&*()_' | fold -w1 | shuf | head -1)
+            PASSWORD=India@${RANDOM}${SPEC}
+            echo "Lets Create User $USERNAME"
+            sudo useradd -m $USERNAME
+            echo "${USERNAME}:${PASSWORD}" | sudo chpasswd
+            passwd -e ${USERNAME}
+            echo "Username is ${USERNAME}  Password is ${PASSWORD}"
+        fi
+    done
+else
+    echo "Provide Some Input as you have given $# params"
+fi
+
