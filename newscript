@@ -13,9 +13,9 @@ then
             PASSWORD=India@${RANDOM}${SPEC}
             echo "Lets Create User $USERNAME"
             sudo useradd -m $USERNAME
-            echo "${USERNAME}:${PASSWORD}" | sudo chpasswd
-            passwd -e ${USERNAME}
-            echo "Username is ${USERNAME}  Password is ${PASSWORD}"
+        echo "${USERNAME}:${PASSWORD}" | sudo chpasswd
+       passwd -e ${USERNAME}
+      echo "Username is ${USERNAME}  Password is ${PASSWORD}"
         fi
     done
 else
