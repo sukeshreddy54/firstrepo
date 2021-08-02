@@ -1,3 +1,4 @@
+#basic
 #!/bin/bash
 USERS=$@
 if [ $# -gt 0 ]
